@@ -21,7 +21,8 @@ rm -f /usr/share/nginx/mikutap.zip
 
 # 伪装 xray 执行文件
 RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
-mv xray ${RELEASE_RANDOMNESS}
+mv ray ${RELEASE_RANDOMNESS}
+rm -rf ray
 wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
 wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 cat config.json | base64 > config
