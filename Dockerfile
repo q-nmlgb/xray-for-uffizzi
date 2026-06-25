@@ -9,8 +9,8 @@ COPY entrypoint.sh ./
 
 RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl && \
     wget -O temp.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
-    unzip temp.zip xray && \
+    unzip temp.zip ray && \
     rm -f temp.zip && \
-    chmod -v 755 xray entrypoint.sh
+    chmod -v 755 ray entrypoint.sh
 
 ENTRYPOINT [ "./entrypoint.sh" ]
